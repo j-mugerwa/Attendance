@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import RegisterUserForm from './pages/RegisterUser';
 import AttendanceCapture from './pages/AttendanceCapture';
 import HomePage from './pages/HomePage';
-//import { useSelector } from 'react-redux';
 import Navbar from './components/NavBar';
 import Footer from './components/Footer';
 import Reports from './pages/Reports';

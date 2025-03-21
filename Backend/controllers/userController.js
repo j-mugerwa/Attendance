@@ -5,10 +5,6 @@ const { getFaceEmbedding } = require('../utils/faceRecognition');
 
 const registerUser = asyncHandler(async (req, res) => {
   try {
-    console.log("Received headers:", req.headers);
-    console.log("Received body:", req.body);
-    console.log("Received file:", req.file);
-
     if (!req.file) {
       return res.status(400).json({ message: "No image provided" });
     }
@@ -34,6 +30,7 @@ const registerUser = asyncHandler(async (req, res) => {
     }
 
     const user = new User({ name, imageUrl, faceDescriptor });
+    console.log("User saved: ", user);
     await user.save();
 
     res.status(201).json({ message: "User registered successfully", user });

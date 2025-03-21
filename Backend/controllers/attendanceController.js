@@ -49,7 +49,7 @@ const checkIn = asyncHandler(async (req, res) => {
 
     const attendance = new Attendance({ user: recognizedUser._id });
     await attendance.save();
-    console.log(".. Attendance captured ..")
+    console.log(".. Attendance captured for:..", recognizedUser.name, " ...")
 
     res.status(201).json({
       message: "Attendance logged successfully",
@@ -82,17 +82,6 @@ const getAttendanceRecords = asyncHandler(async (req, res) => {
 });
 
 // Get summary statistics
-/*
-const getAttendanceSummary = asyncHandler(async (req, res) => {
-  const totalRecords = await Attendance.countDocuments();
-  const presentCount = await Attendance.countDocuments({ status: "present" });
-  const absentCount = await Attendance.countDocuments({ status: "absent" });
-  const lateCount = await Attendance.countDocuments({ status: "late" });
-
-  res.status(200).json({ totalRecords, presentCount, absentCount, lateCount });
-});
-*/
-
 const getAttendanceSummary = asyncHandler(async (req, res) => {
   try {
     const today = new Date();
