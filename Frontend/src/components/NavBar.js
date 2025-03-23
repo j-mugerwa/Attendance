@@ -29,10 +29,8 @@ const Navbar = () => {
           <Button color="inherit" component={Link} to="/">
             HOME
           </Button>
-
       </Toolbar>
     </AppBar>
   );
 };
-
 export default Navbar;
