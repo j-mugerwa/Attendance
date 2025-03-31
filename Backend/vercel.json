@@ -11,5 +11,10 @@
       "src": "/(.*)",
       "dest": "api/vercel.js"
     }
-  ]
+  ],
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  }
 }
